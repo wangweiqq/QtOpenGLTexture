@@ -10,6 +10,7 @@ class OpenGLWidget : public QOpenGLWidget
 public:
 	OpenGLWidget(QWidget *parent = Q_NULLPTR);
 	~OpenGLWidget();
+	void loadGLTexture();
 protected:
 	void initializeGL()override;
 	void paintGL()override;
@@ -17,6 +18,6 @@ protected:
 	void timerEvent(QTimerEvent *event)override;
 private:
 	//Ui::OpenGLWidget ui;
-	GLfloat xRot, yRot, zRot;
+	GLfloat xRot = 0, yRot = 0, zRot = 0;
 	GLuint texture[1];
 };
